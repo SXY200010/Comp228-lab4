@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<GridPane alignment="CENTER" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml"
+          fx:controller="lab4.StudentInfoController"
+          prefWidth="1000" prefHeight="500">
+    <padding>
+        <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
+    </padding>
+
+
+    <!-- Set column constraints to create four equal-width columns -->
+    <columnConstraints>
+        <ColumnConstraints percentWidth="25"/>
+        <ColumnConstraints percentWidth="25"/>
+        <ColumnConstraints percentWidth="25"/>
+        <ColumnConstraints percentWidth="25"/>
+    </columnConstraints>
+
+    <!-- Input Fields -->
+    <Label text="Full Name:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <TextField fx:id="fullNameField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+    <Label text="Address:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <TextField fx:id="addressField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+    <Label text="City:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <TextField fx:id="cityField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+    <Label text="Province:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+    <TextField fx:id="provinceField" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+    <Label text="Postal Code:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+    <TextField fx:id="postalCodeField" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+    <Label text="Phone:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+    <TextField fx:id="phoneField" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+    <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+    <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+    <!-- Checkboxes for Additional Activities -->
+    <CheckBox fx:id="studentCouncilCheckBox" text="Student Council" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+    <CheckBox fx:id="volunteerCheckBox" text="Volunteer Work" GridPane.columnIndex="2" GridPane.rowIndex="5"/>
+
+    <!-- Major Selection -->
+    <HBox spacing="10" GridPane.columnIndex="3" GridPane.rowIndex="0" >
+        <RadioButton fx:id="csRadioButton" text="Computer Science" onAction="#handleMajorSelection" />
+        <RadioButton fx:id="businessRadioButton" text="Business" onAction="#handleMajorSelection" />
+    </HBox>
+
+    <!-- Course ComboBox and ListView -->
+    <VBox GridPane.columnIndex="3" GridPane.rowIndex="1">
+        <ComboBox fx:id="courseComboBox" onAction="#handleCourseSelection" prefWidth="240" />
+    </VBox>
+
+    <VBox GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.rowSpan="3">
+        <ListView fx:id="courseListView" prefHeight="100" maxWidth="240"/>
+    </VBox>
+
+    <!-- Submit Button -->
+    <Button text="Submit" onAction="#handleSubmit" GridPane.columnIndex="0" GridPane.rowIndex="8" GridPane.columnSpan="4" GridPane.halignment="CENTER"/>
+
+    <!-- Display Area -->
+    <TextArea fx:id="displayArea" GridPane.columnIndex="0" GridPane.rowIndex="10" GridPane.columnSpan="4"/>
+</GridPane>
