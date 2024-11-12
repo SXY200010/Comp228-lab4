@@ -108,7 +108,6 @@ public class StudentInfoController {
             displayArea.setText(studentInfo.toString());
 
         } catch (IllegalArgumentException e) {
-            // 显示错误信息
             showAlert(AlertType.ERROR, "Input Error", e.getMessage());
         }
     }
